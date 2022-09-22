@@ -1,0 +1,406 @@
+/* Header */  
+.header {
+    overflow: hidden;
+    border: 0.5px solid;
+    margin: 1.5%;
+    display: block;
+    padding: 8px 8px;  
+    height: 80px;
+    width: 1850px;
+    background: linear-gradient(rgb(3, 69, 3), rgb(3, 69, 3)), 
+              repeating-linear-gradient(140deg, white, red 20px, white 25px, red 20px);
+    border-radius: 15px;
+    background-origin: content-box, padding-box;
+    background-clip: content-box, padding-box;
+    position: relative;
+}
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 35px;
+    border-radius: 4px;
+    margin-bottom: 2s0px;
+    margin-left: 10px;
+    margin: 0;
+    border: 2px;
+}
+.header a.logo {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.header a:hover {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: whitesmoke;
+    box-shadow: 0px 0px 10px 8px rgba(80, 6, 6, 0.3);
+    border-radius: 120px; 
+    text-shadow: 3px 0 0 rgb(0, 0, 0), 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+.header-right {
+    float: right; 
+    padding-top: 4px;
+}
+@media screen and (max-width: 500px) {
+ .header a {
+      float: right;
+      display: block;
+      text-align: left;
+    }
+  .header-right {
+      float: right;
+    }
+  }
+  .header input[type=text] {
+    float: right;
+    padding: 8px;
+    border: none;
+    margin-top: 20px;
+    margin-right: 30px;
+    font-size: 17px;
+    border-radius: 10px;
+    margin-left: 15px;
+    padding-left: 15px;
+  }
+  @media screen and (max-width: 500px) {
+    .header input[type=text] {
+      float: right;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .header input[type=text] {
+      border: 1px solid #ccc;
+    }
+  }
+.grid-1 {
+    display: grid;
+    width: 96%;
+    max-width: 1100px;
+    margin: 3% auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 25px;
+    grid-template-areas:  "t        t       t"
+                          "d1       d2      d3"
+                          "d4       d5      d6"
+                          "d7       d8      d9"
+                          "d10      d11     d12"
+                          "d13      d14     d15"
+                          "d16      d17     d18"
+                          "d19      d20     d21"
+                          "d22      d23     d24";
+}
+@media only screen and (min-width: 500px) {
+.grid-1 {   
+    margin: 4% auto;
+    margin-right: 350px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:      "d1      d2      d3      d4      d5      d6"
+                              "d7      d8      d9      d10     d11     d12"
+                              "d13     d14     d15     d16     d17     d18"     
+                              "d19     d20     d21     d22     d23     d24";      
+    }
+} 
+
+/* Doors */
+section div {
+      background: rgb(3, 69, 3);
+      padding: 3px; 
+      border-radius: 5px;
+} 
+.grid-1 input {
+    display: none; 
+}
+label {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    display: flex;
+    min-height: 93%;
+    min-width: 100%;
+    width: 130px;
+    height: 145px;
+}  
+.door {
+    height: 135px;
+    width: 150px;
+    transform-style: preserve-3d;
+    transition: all 300ms;
+    border:2px dashed transparent;    
+}
+.door div {
+    position: absolute;
+    height: 129px;
+    width: 130px;
+    backface-visibility: hidden;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border: 0.5px solid;
+  }
+  .door .front {
+     color: white;   
+     font-size: larger;
+     min-height: 65%;
+     min-width: 90%;
+     border-radius: 3px;
+  }
+  .door .front:hover {
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    border-radius: 3px;
+    min-height: 60%;
+    min-width: 90%;
+    text-shadow: 5px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  }
+  .door .back {
+    background-color: white;
+    transform: rotateY(180deg);
+    min-height: 90%;
+    min-width: 90%;
+  }
+  label:hover .door {
+    min-height: 90%;
+    min-width: 93%;
+    border-image: repeating-linear-gradient(
+        60deg, white, red 20px, white 25px, red 20px) 3;
+    color: black;
+  }
+  :checked + .door {
+    border: 3px solid;
+    border-image: repeating-linear-gradient(140deg, white, red 20px, white 25px, red 20px) 1;
+    transform: rotateY(180deg);
+    background-color: white;
+    min-height: 80%;
+    min-width: 90%;
+    padding-bottom: 1px;
+  }
+
+/* body */
+body {
+    background-color: rgb(2, 2, 54);
+}
+
+.day-1 {
+    grid-area: d1;  
+    border: 2px solid;
+}
+.day-2 {
+    grid-area: d2;
+    border: 2px solid;
+}
+.day-3 {
+    grid-area: d3;
+    border: 2px solid;
+}
+.day-4 {
+    grid-area: d4;
+    border: 2px solid;
+}
+.day-5 {
+    grid-area: d5;
+    border: 2px solid;
+} 
+.day-6 {
+    grid-area: d6;
+    border: 2px solid;
+} 
+.day-7 {
+    grid-area: d7;
+    border: 2px solid;
+} 
+.day-7 {
+    grid-area: d7;
+    border: 2px solid;
+} 
+.day-8 {
+    grid-area: d8;
+    border: 2px solid;
+} 
+.day-9 {
+    grid-area: d9;
+    border: 2px solid;
+} 
+.day-10 {
+    grid-area: d10;
+    border: 2px solid;
+} 
+.day-11 {
+    grid-area: d11;
+    border: 2px solid;
+}
+.day-12 {
+    grid-area: d12;
+    border: 2px solid;
+}
+.day-13 {
+    grid-area: d13;
+    border: 2px solid;
+}
+.day-14 {
+    grid-area: d14;
+    border: 2px solid;
+}
+.day-15 {
+    grid-area: d15;
+    border: 2px solid;
+}
+.day-16 {
+    grid-area: d16;
+    border: 2px solid;
+}
+.day-17 {
+    grid-area: d17;
+    border: 2px solid;
+}
+.day-18 {
+    grid-area: d18;
+    border: 2px solid;
+}
+.day-19 {
+    grid-area: d19;
+    border: 2px solid;
+}
+.day-20 {
+    grid-area: d20;
+    border: 2px solid;
+}
+.day-21 {
+    grid-area: d21;
+    border: 2px solid;
+}
+.day-22 {
+    grid-area: d22;
+    border: 2px solid;
+}
+.day-23 {
+    grid-area: d23;
+    border: 2px solid;
+}
+.day-24 {
+    grid-area: d24;
+    border: 2px solid;
+}
+
+/* footer */
+.footer {
+    height: 100px;
+    width: 100px;
+    padding-top: 0px;
+    color: white;
+    position: absolute;
+  }
+  .footer-content {
+    overflow: hidden;
+    border: 0.5px solid;
+    margin: 1%;
+    display: block;
+    padding: 8px 8px;  
+    height: 130px;
+    width: 1850px;
+    background: linear-gradient(rgb(3, 69, 3), rgb(3, 69, 3)), 
+              repeating-linear-gradient(140deg, white, red 20px, white 25px, red 20px);
+    border-radius: 15px;
+    background-origin: content-box, padding-box;
+    background-clip: content-box, padding-box;
+  }
+  form {
+      border-radius: 15px;  
+  }
+  p {
+    font-family: sans-serif;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  .newsletter {
+    padding: 1px;
+    padding-left: 10px;
+    border-radius: 10px;
+    width: 600px;
+    color: white;
+    box-sizing: border-box;
+    position: relative;   
+  }
+  .newsletter input[type=text], input[type=submit] {  
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+  }
+  .newsletter input[type=text] {
+    border-radius: 5px;
+    width: 50%;
+    display: inline-block;
+    margin: 8px;
+    border: none;
+    box-sizing: border-box;
+  }
+  .newsletter input[type=submit] {
+    background-color:#023b0f;
+    color: white;
+    width: 15%;
+    border: none;
+    margin-top: 8px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+  }
+  .newsletter input[type=submit]:hover {
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    border-radius: 3px;
+    text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  }
+
+  /* footer social media */
+.social {
+    
+    display: inline-block;
+    padding-bottom: 30px;
+}
+  .fa-facebook {
+
+  }
+
+  /* snowflakes */
+  .snowflake {
+    color: #fff;
+    font-size: 2em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+  } 
+  @-webkit-keyframes snowflakes-fall{1%{top:-10%}100%{top:100%}}
+  
+  @-webkit-keyframes snowflakes-shake{1%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}
+  
+  @keyframes snowflakes-fall{1%{top:-10%}100%{top:100%}}
+  
+  @keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}
+  
+  .snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}
+  .snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}
+  .snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}
+  .snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}
+  .snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}
+  .snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}
+  .snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}
+  .snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}
+  .snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}
+  .snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}
+  .snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+  
+
+
